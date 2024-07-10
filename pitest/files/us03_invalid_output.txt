@@ -1,0 +1,4 @@
+ERROR:INDIVIDUAL: User Story US03: Birth Before Death 
+Individual: @I1@ - Jane Doe was born after death
+DOB: 01/01/2000 DOD: 01/01/1990
+

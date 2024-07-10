@@ -1,0 +1,40 @@
+ID    NAME                 GENDER     BIRTHDAY     AGE        ALIVE      DEATH                CHILD      SPOUSE
+==    ====                 ======     ========     ===        =====      =====                =====      ======
+I1    John /Smith/         M          1 JAN 1950   67         true       NA                   {'F2'}     {'F1'}
+I2    Mary /Jones/         F          1 JAN 1990   27         true       NA                   NA         {'F1'}
+I3    Bob /Smith/          M          1 MAR 2010   7          true       NA                   {'F1'}     NA
+I4    Erin /Smith/         M          1 MAR 2010   7          true       NA                   {'F1'}     NA
+I5    Adam /Smith/         M          1 MAR 2010   7          true       NA                   {'F1'}     NA
+I6    Dan /Smith/          M          1 MAR 2010   7          true       NA                   {'F1'}     NA
+I7    Peter /Smith/        M          1 MAR 2010   7          false      2 APR 2010           {'F1'}     NA
+I8    Michael /Smith/      M          1 JAN 2020   -2         true       NA                   {'F1'}     NA
+I9    Brian /Smith/        M          1 JAN 2010   7          false      3 JAN 2020           {'F1'}     NA
+I10   Dan /Smith/          M          1 MAR 2010   7          true       NA                   {'F1'}     NA
+I11   Joe /Smith/          M          1 JAN 1930   87         true       NA                   {'F3'}     {'F2'}
+I12   Ellen /Kennedy/      F          1 JAN 1930   87         true       NA                   NA         {'F2'}
+I13   Robert /Smith/       M          7 JAN 1900   117        false      1 FEB 1951           NA         {'F3'}
+I14   Erica /Jones/        F          1 JAN 1900   117        false      2 JAN 1950           NA         {'F3'}
+
+ID    MARRIED              DIVORCED   HUSBAND ID   HUSBAND NAME         WIFE ID    WIFE NAME            CHILDREN
+==    =======              ========   ==========   ============         =======    =========            ========
+F1    1 JAN 2010           NA         I1           John /Smith/         I2         Mary /Jones/         {'I3',I4',I5',I6',I7',I8',I9','I10'}
+F2    1 JAN 2025           NA         I11          Joe /Smith/          I12        Ellen /Kennedy/      {'I1'}
+F3    1 JAN 1920           3          MAR          2021 I13             Robert     /Smith/ I14          Erica
+
+ERROR: INDIVIDUAL: US3: Invalid birthdate: I8 1 JAN 2020
+ERROR: INDIVIDUAL: US3: Invalid death date: I9 3 JAN 2020
+
+ERROR: FAMILY: US4: Invalid Marriage Date: F2 1 JAN 2025
+ERROR: FAMILY: US4: Invalid Divorce Date: F3 3 MAR 2021
+
+ERROR: INDIVIDUAL: US1: Invalid Birthday: I8 1 JAN 2020
+ERROR: INDIVIDUAL: US1: Invalid Day of Death: I9 3 JAN 2020
+ERROR: INDIVIDUAL: US1: Invalid Marriage Day: F2 1 JAN 2025
+ERROR: INDIVIDUAL: US1: Invalid Divorce Day: F3 3 MAR 2021
+
+ERROR US25 Family F1 has Individuals I6, I10, with same name and birthday
+INFO: INDIVIDUAL: US29: Individual is deceased: Robert /Smith/: Individual died on: 1 FEB 1951
+INFO: INDIVIDUAL: US29: Individual is deceased: Erica /Jones/: Individual died on: 2 JAN 1950
+INFO: INDIVIDUAL: US29: Individual is deceased: Peter /Smith/: Individual died on: 2 APR 2010
+INFO: INDIVIDUAL: US29: Individual is deceased: Brian /Smith/: Individual died on: 3 JAN 2020
+ERROR: FAMILY: US14: Family: @F1@ has five or more children with the same birthday: Birthdate: 1 MAR 2010 : Children: Bob /Smith/, Erin /Smith/, Adam /Smith/, Dan /Smith/, Peter /Smith/, Dan /Smith/

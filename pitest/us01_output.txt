@@ -1,0 +1,7 @@
+User story 1
+Invalid birthdays
+I8 1 JAN 2020
+Invalid deathdaysI9 3 JAN 2020
+Invalid marriagesF2 1 JAN 2025
+Invalid divorces
+F3 3 MAR 2021

@@ -1,0 +1,4 @@
+Output of user story 4:
+Invalid marriagedates
+F2 1 JAN 2025
+Invalid divorcedatesF3 3 MAR 2021
